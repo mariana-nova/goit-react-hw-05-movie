@@ -1,0 +1,42 @@
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  li {
+    margin-right: 20px;
+    margin-bottom: 20px;
+  }
+  
+  img {
+    max-width: 200px;
+    height: auto;
+    border-radius: 4px;
+    background-color: black;
+  }
+  
+  h3 {
+    font-size: 18px;
+    margin-top: 10px;
+  }
+  .background{
+    background-color: mediumpurple;
+  }
+  .title{
+    background-color: mediumpurple;
+  }
+
+  
