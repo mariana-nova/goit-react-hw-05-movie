@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-import '../Movies/Movies.css';
+import '../Pages/Movies.css';
 
 const Movies = () => {
   const API = '1623f57533b97bebcbc907a2a1164d19'; 

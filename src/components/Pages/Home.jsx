@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-import '../Home/Home.css';
+import '../Pages/Home.css';
 const Home = () => {
   const API = '1623f57533b97bebcbc907a2a1164d19'; 
   const [popularMovies, setPopularMovies] = useState([]);

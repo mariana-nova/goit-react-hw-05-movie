@@ -23,7 +23,7 @@ const Cast = () => {
   }, [movieId]);
 
   return (
-    <div>
+    <div className='cast-color'>
       <h2>Cast</h2>
       <ul>
         {cast.map(actor => (

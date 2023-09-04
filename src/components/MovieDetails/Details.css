@@ -1,18 +1,12 @@
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  
-  h2 {
+   h2 {
     font-size: 24px;
     margin-bottom: 20px;
   }
   
-  .movie-info {
+   .movie-info {
     display: flex;
     align-items: center;
-  }
+  } 
   
   img {
     max-width: 300px;
@@ -40,4 +34,5 @@
   }
   .details{
     background-color: beige;
+    padding: 30px;
   }

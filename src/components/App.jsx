@@ -1,19 +1,20 @@
 import React from 'react';
 import { Routes, Route, Link } from 'react-router-dom';
-import Home from './Home/Home';
-import Movies from './Movies/Movies';
+import Home from './Pages/Home';
+import Movies from './Pages/Movies';
 import MovieDetails from './MovieDetails/MovieDetails';
 import Cast from './Cast/Cast';
 import Reviews from './Reviews/Reviews';
 import '../index.css';
+import './App.css';
 
 
 const App = () => {
   return (
-    <div>
-      <header>
-        <Link to="/">Home</Link>
-        <Link to="/movies">Movie</Link>
+    <div className='container'>
+      <header className='app-container'>
+        <Link className='nav-link' to="/">Home </Link>
+        <Link className='nav-link' to="/movies">Movie</Link>
         </header>
         <Routes>
         <Route path="/" element={<Home />} />
