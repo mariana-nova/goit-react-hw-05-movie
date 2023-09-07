@@ -1,18 +1,16 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import axios from 'axios';
 import '../Pages/Movies.css';
+import { searchMovies } from '../api'; 
 
 const Movies = () => {
-  const API = '1623f57533b97bebcbc907a2a1164d19'; 
   const [searchQuery, setSearchQuery] = useState('');
   const [searchResults, setSearchResults] = useState([]);
 
   const handleSearch = async () => {
     try {
-      const response = await axios.get(`https://api.themoviedb.org/3/search/movie?api_key=${API}&query=${searchQuery}`);
-      const data = response.data;
-      setSearchResults(data.results);
+      const results = await searchMovies(searchQuery); 
+      setSearchResults(results);
     } catch (error) {
       console.error('Error searching movies:', error);
     }

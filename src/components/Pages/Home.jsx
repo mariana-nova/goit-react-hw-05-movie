@@ -1,24 +1,22 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import axios from 'axios';
 import '../Pages/Home.css';
+import { fetchPopularMovies } from '../api'; 
+
 const Home = () => {
-  const API = '1623f57533b97bebcbc907a2a1164d19'; 
   const [popularMovies, setPopularMovies] = useState([]);
 
   useEffect(() => {
-    async function fetchPopularMovies() {
+    async function fetchData() {
       try {
-        const response = await axios.get(`https://api.themoviedb.org/3/trending/all/day?api_key=${API}`);
-        const data = response.data;
-        const filteredMovies = data.results.filter(movie => movie.title);
+        const filteredMovies = await fetchPopularMovies();
         setPopularMovies(filteredMovies);
       } catch (error) {
         console.error('Error fetching popular movies:', error);
       }
     }
 
-    fetchPopularMovies();
+    fetchData();
   }, []);
 
   return (
@@ -41,4 +39,3 @@ const Home = () => {
 };
 
 export default Home;
-

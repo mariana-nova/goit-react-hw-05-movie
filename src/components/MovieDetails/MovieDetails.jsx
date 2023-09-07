@@ -1,25 +1,23 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link, Outlet } from 'react-router-dom';
-import axios from 'axios';
 import '../MovieDetails/Details.css';
+import { fetchMovieDetails } from '../api'; 
 
 const MovieDetails = () => {
-  const API= '1623f57533b97bebcbc907a2a1164d19'; 
   const { movieId } = useParams();
   const [movieDetails, setMovieDetails] = useState(null);
 
   useEffect(() => {
-    async function fetchMovieDetails() {
+    async function fetchDetails() {
       try {
-        const response = await axios.get(`https://api.themoviedb.org/3/movie/${movieId}?api_key=${API}&append_to_response=credits,reviews`);
-        const data = response.data;
-        setMovieDetails(data);
+        const details = await fetchMovieDetails(movieId);
+        setMovieDetails(details);
       } catch (error) {
         console.error('Error fetching movie details:', error);
       }
     }
 
-    fetchMovieDetails();
+    fetchDetails();
   }, [movieId]);
 
   return (
@@ -65,4 +63,5 @@ const MovieDetails = () => {
   );
 };
 
-export default MovieDetails;
+export default MovieDetails; 
+
